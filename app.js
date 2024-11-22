@@ -6,8 +6,11 @@ function sortear(){
     if (de >= ate) {
         alert('Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!');
         return;
-      }
-      
+      }if (quantidade > (ate - de + 1)) {
+        alert('Campo "Quantidade" deve ser menor ou igual ao intervalo informado no campo "Do número" até o campo "Até o número". Verifique!');
+        return;
+    }
+
     let sorteados = [];
     let numero;
     
@@ -17,6 +20,7 @@ function sortear(){
         while (sorteados.includes(numero)) {
         numero = obterNumeroAleatorio(de, ate);
         }
+
         sorteados.push(numero);
     }
     sorteados.sort((a, b) => a - b);
